@@ -14,8 +14,10 @@ def student():
 def addrec():
    if request.method == 'POST':
       try:
-         
-         
+         name = request.form['name']
+         addr = request.form['add']
+         city = request.form['city']
+         pin = request.form['pin']
          with sql.connect("database.db") as con:
             cur = con.cursor()
             
@@ -33,6 +35,12 @@ def addrec():
 
 @app.route('/list')
 def list():
+   con = sql.connect("database.db")
+   con.row_factory = sql.Row
+   cur = con.cursor()
+   cur.execute("select * from students")
+   rows = cur.fetchall()
+   print (rows)
    
    return render_template("list.html",rows = rows)
 
