@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<strong><link rel="stylesheet" href="{{ url_for('static',filename='css/styles.css')}}">
+<link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css"rel="stylesheet">
+ <link herf="../static/signup.css"rel="stylesheet"></strong>
+
+<style>
+img {
+    width:100%;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #ffbb33;
+}
+
+li {
+    float: right;
+}
+
+li  {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #2ef2c0;
+}
+</style>
+</head>
+
+<ul>
+
+  <li style="float:left"><a href="#student"><b>Student Registration </a></li></b>
+  <li><a href="{{url_for('contact')}}">Contact</a></li>
+  <li><a href="{{url_for('student')}}">Register</a></li>
+  <li><a href="{{url_for('home')}}">Home</a></li>
+
+</ul>
+<div class="jumbotron">
+<form>
+
+    <h3> <li><a href="{{ url_for('student') }}">Add new record</a></li></h3>
+	<h3> <li><a href="{{ url_for('list') }}">Show list</a></li> </h3>
+     
+
+</body>
+</html>
+
